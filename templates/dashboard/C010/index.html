@@ -1,0 +1,33 @@
+{% extends 'dashboard/base.html' %}
+
+
+{% block description %}
+	The Flag is protected by the lab administrators! Get the flag by faking as admin;
+	The session is automatically logged in for you, but it' s a guest Session! 	Do what you can do to get the flag!
+{% endblock %}
+
+{% block content %}
+<div class="glass p-3">
+	<div class="row">
+		{% if has_admin_session %}
+		<div class="col-md-12 text-center">
+			<div class="alert alert-success"> <kbd>Hey Admin, Flag Found :"{{ FLAG }}"</kbd> </div>
+		</div>
+		{% else %}
+		<div class="content">
+			<div class="alert alert-danger">This Content is generated only for administrators!; Guest user's should get out of the page immidiately!!</div>
+		</div>
+		{% endif %}
+	</div>
+</div>
+{% if not has_proper_agent %}
+<script>
+	(function(){ console.log("Expected User-Agent was '{{ settings.ARENA.USER_AGENT }}/5.0 (X11; Linux x86_64) AppleWebKit/537.36 '") })()
+</script>
+{% endif %}
+{% endblock %}
+
+{% block hintbox %}
+	If you know How Browser Sessions Work, This won't be a big problem for you!
+{% endblock %}
+

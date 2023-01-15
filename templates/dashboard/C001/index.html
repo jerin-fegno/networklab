@@ -1,0 +1,51 @@
+{% extends 'dashboard/base.html' %}
+
+
+{% block description %}
+You are now at <u>{{ settings.ARENA.LOCATION }}</u>! There, they have appointed a new lad as assistant admin!
+As am aware, he is a new bie and done something to recollect the password into his email, instead of note down to his diary;.
+Will you be able to Hack to his system ?
+{% endblock %}
+
+{% block content %}
+			{% if request.GET.email_sent == "true" %}
+			<div class=" alert alert-info alert-dismissible my-3 p-3 fade show " 	role="alert">
+				<svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Success:"><use xlink:href="#check-circle-fill"/></svg>
+					Your Password has been sent to {{ settings.ARENA.ASSISTANT_EMAIL }}! Please Check Your Inbox!
+				<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+			</div>
+			{% elif request.GET.email_sent == "invalid_source" %}
+			<div class=" alert alert-warning alert-dismissible my-3 p-3 fade show " 	role="alert">
+				  <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Warning:"><use xlink:href="#exclamation-triangle-fill"/></svg>
+					The Form has been submitted from invalid source!
+				<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+			</div>
+			{% elif request.GET.email_sent == "invalid_email" %}
+			<div class=" alert alert-warning alert-dismissible my-3 p-3 fade show " 	role="alert">
+				  <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Warning:"><use xlink:href="#exclamation-triangle-fill"/></svg>
+					'{{ request.GET.email_addr }}' does not seems to be a valid email!
+				<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+			</div>
+			{% endif %}
+			<div class="glass">
+				<form action="{% url 'C001_labadmin_login' %}" method="POST">
+					<input type="hidden" name="email" value='{{ settings.ARENA.ASSISTANT_EMAIL }}'>
+					<input type="submit" name="sentmail" value="Send password to my EMAIL">
+
+					<br>
+					Username : <br><input type="text" placeholder="username">
+					<br>
+					Password : <br>
+					<input type="password" placeholder="secret_password" value="" >
+
+					<input type="button" value="Login" onclick='alert("Find result and submit to LETS DECRYPT!");return false';>
+
+				</form>
+			</div>
+{% endblock %}
+
+{% block hintbox %}
+	It's a good catch you checked the view source;
+	I assume, the email hidden in the form is his email; he is probably making use of that!
+{% endblock %}
+

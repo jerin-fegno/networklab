@@ -1,0 +1,43 @@
+{% extends 'dashboard/base.html' %}
+
+
+{% block description %}
+Every program runs on a device; This challenge is also hosted in such a low-memory device!
+
+{% endblock %}
+
+{% block content %}
+<div class="glass p-3">
+	<div class="row">
+		{% if request.method == 'POST' and server_crash %}
+		<div class="content">
+			<div class="alert alert-danger"> ⚠️ Server Crashed!! </div>
+			<div class="alert alert-danger"> 🚨 <b>Buffer Overflow:</b> Could not store the data in the allocated memory ! </div>
+			<div class="alert alert-danger"> ⚠️ Buffer crashed at line <code>challenges-007/index.html post(). Line 244</code>: <kbd>Flag Found :"{{ FLAG }}"</kbd> </div>
+
+
+		</div>
+
+		{% else %}
+		<div class="col-md-12 text-center">
+			<form action="" method="POST">
+				<input type="text" placeholder="username" name="username" maxlength="200" />
+				<input type="password" placeholder="secret password"  name="password" maxlength="200" />
+				<input type="text" placeholder="OTP" name="otp" maxlength="6" />
+				<input type="url" placeholder="eg: rtgs://127.0.0.1:8000" name="address" maxlength="32" />
+				{% if request.method == 'POST' and not server_crash %}
+					<span class="text-danger"> Username and Password does not match!! </span>
+				{% endif %}
+				<input type="submit" >
+			</form>
+		</div>
+		{% endif %}
+	</div>
+</div>
+{% endblock %}
+
+{% block hintbox %}
+	Looking for Hint ? https://www.ndtv.com/indians-abroad/kerala-based-researcher-bypasses-apples-ipad-activation-lock-1633137
+	Memory: 0x512 chars per field!
+{% endblock %}
+

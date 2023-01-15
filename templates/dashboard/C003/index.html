@@ -1,0 +1,31 @@
+{% extends 'dashboard/base.html' %}
+
+
+{% block description %}
+	In Order to perform an operation, We need 2 operands and an operator! You have the operator in Title,
+	Operands in the body! What the heck you need? Combine the strings and you will get the flag!
+{% endblock %}
+
+{% block content %}
+<div class="glass p-3">
+	<div class="row">
+		<div class="col-md-12">
+			<h4>String 1</h4>
+			<p><code>{{ BINARY_01 }}</code></p>
+		</div>
+		<div class="col-md-12">
+			<h4>String 2</h4>
+			<p><code>{{ BINARY_02 }}</code></p>
+		</div>
+	</div>
+</div>
+
+{% endblock %}
+
+{% block hintbox %}
+I appreciate the thought,
+But the answers are not always at same location always!
+
+Though I ll get you a hint, 1's and 0's form binary (base 2), but yet you need it in ASC-II that is yet another (base 256)
+{% endblock %}
+

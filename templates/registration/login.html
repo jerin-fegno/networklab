@@ -1,0 +1,7 @@
+{% extends 'registration/base.html' %}
+
+{% block form_header %}{{ title|default:"LOGIN" }}{% endblock %}
+
+{% block bottom_links %}
+    <a href="{% url 'registeration' %}">Create a new account</a> | <a href="{% url 'password_reset' %}">Forgot Password ?</a> 
+{% endblock %}

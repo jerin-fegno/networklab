@@ -1,0 +1,19 @@
+{% extends 'dashboard/base.html' %}
+
+
+{% block description %}
+	FLAG FOUND!!
+{% endblock %}
+
+{% block content %}
+	<div class="alert alert-success">
+		Hurrey!! You have found the password! use the Flag <kbd> {{ FLAG }} </kbd>  to Proceed!
+	</div>
+	<div class="glass m-3 p-3">
+		You do not have to enter these into the login form. You can share this flag directly to the point you found the question!
+	</div>
+{% endblock %}
+
+{% block hintbox %}
+{% endblock %}
+

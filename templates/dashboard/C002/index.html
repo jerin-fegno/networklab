@@ -1,0 +1,41 @@
+{% extends 'dashboard/base.html' %}
+
+
+{% block description %}
+Find the right password and use it on the challenge page!
+{% endblock %}
+
+{% block content %}
+<div class="glass">
+	<form action="" method="GET">
+		Username : <br><input type="text" name="username" placeholder="username" value="labadmin">
+		<br>
+		Password :
+		<br>
+		<input type="password" id="passwd" name="password" placeholder="secret_password" value="" >
+		<br>
+		<input type="button" value="Login" onclick='submitentry();return false';>
+	</form>
+</div>
+
+<script type="text/javascript">
+	var numletter="{{ PATTERN }}";
+	function submitentry(){
+		verification = document.getElementById("passwd").value;
+		{{ SCRIPT|safe }}
+		if(verification == password){
+			alert(`Hurrey!! You have found the password! Use the flag "${password}"  to proceed!`);
+		} else {
+			alert("Nahh, thats wrong!");
+		}
+	}
+</script>
+{% endblock %}
+
+{% block hintbox %}
+It's a good catch you checked the view source;
+
+learn about Substring at : https://www.w3schools.com/jsref/jsref_substring.asp
+
+{% endblock %}
+

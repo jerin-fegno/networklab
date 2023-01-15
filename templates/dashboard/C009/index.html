@@ -1,0 +1,32 @@
+{% extends 'dashboard/base.html' %}
+
+
+{% block description %}
+This Page is facing too much scraping and bot entry; so admin is restricted the page for {{ settings.ARENA.LOCATION }} browsers only!
+{% endblock %}
+
+{% block content %}
+<div class="glass p-3">
+	<div class="row">
+		{% if has_proper_agent %}
+		<div class="col-md-12 text-center">
+			<div class="alert alert-success"> <kbd>Flag Found :"{{ FLAG }}"</kbd> </div>
+		</div>
+		{% else %}
+		<div class="content">
+			The contents has been disabled Due to invalid User-Agent;
+		</div>
+		{% endif %}
+	</div>
+</div>
+{% if not has_proper_agent %}
+<script>
+	(function(){ console.log("Expected User-Agent was '{{ settings.ARENA.USER_AGENT }}/5.0 (X11; Linux x86_64) AppleWebKit/537.36 '") })()
+</script>
+{% endif %}
+{% endblock %}
+
+{% block hintbox %}
+	Manipulate Browser Requests by Script or Extensions!
+{% endblock %}
+
