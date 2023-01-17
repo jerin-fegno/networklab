@@ -20,12 +20,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-n%hw#qb2opa)mszkugbn_ktiuj#cyh-_ow-&rk8^cpe9=js%*s'
+SECRET_KEY = 'dj-o-asdasdasdasdgoy12389472o83qwe_ktiuj#cyh-_ow-&rk8^cpe9=js%*s'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["networklabs.pehia.org", ]
 
 
 # Application definition
@@ -113,10 +113,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
 STATIC_URL = 'assets/'
-STATIC_ROOT = BASE_DIR / 'public/' / STATIC_URL
+STATIC_ROOT = BASE_DIR / 'public' / STATIC_URL
 STATICFILES_DIRS = [BASE_DIR / 'public' / 'static']
 MEDIA_URL = 'src/'
-MEDIA_ROOT = BASE_DIR / 'public/' / MEDIA_URL
+MEDIA_ROOT = BASE_DIR / 'public' / MEDIA_URL
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
