@@ -46,6 +46,14 @@ class PathException(TemplateView):
     }
 
 
+class Path404(TemplateView):
+    template_name = 'dashboard/C008/404.html'
+    extra_context = {
+        'challenge_title': "A fantesy Lock!",
+        'FLAG': settings.ARENA_FLAGS['C008'],
+    }
+
+
 
 
 

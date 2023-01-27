@@ -37,8 +37,9 @@ urlpatterns = [
         path('', c008.Challenge.as_view(), name='C008'),
         path('newlabassistant/', c008.PathFinder.as_view(), name='C008-path-finder'),
         path('newlabassistant/recovery.html', c008.Recovery.as_view(), name='C008-recovery'),
-        re_path('^(.*)', c008.PathException.as_view(), name='C008-PathException'),
-        re_path('^(.*)/(.*)', c008.PathException.as_view(), name='C008-PathException'),
+        re_path('^(.*)', c008.Path404.as_view(), name='C008-PathException'),
+        re_path('^(.*)/', c008.PathException.as_view(), name='C008-PathException'),
+        re_path('^(.*)/(.*)', c008.Path404.as_view(), name='C008-PathException'),
         re_path('^newlabassistant/(.*)', c008.PathException.as_view(), name='C008-PathException-inner'),
     ])),
     path('challenge-master-manipulator/', include([
