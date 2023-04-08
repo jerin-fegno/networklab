@@ -181,3 +181,32 @@ CMD ["gunicorn", "--bind", "0.0.0.0:8000", "hackbox.wsgi:application"]
 
 For Flag mode, you can use @fbctf, and for Simple Mode, you can use @CTFd.
 
+
+# Customizing Challenge Flags
+
+To customize the #challenge_flags alter values the values in `hackbox/settings.py. Remember  this is python file. take care of that if you are not comfortable with python.
+
+```python3
+
+ARENA = {
+    "LOCATION": "Project Network Lab",  # Projecting Challenge name in page titles.
+    "USER_AGENT": "Pehia",      # A solution to challenge #C009 depends on this word. 
+    "ASSISTANT_EMAIL": "assistant@pehialabs.org",       # A solution to challenge #C001 uses this as default email. 
+    "CHALLENGE_NAME": "Pehia CTF",      # Projecting Challenge name in meta descriptions
+}
+
+ARENA_FLAGS = {
+    'C001': "LABS&PEHIA123",
+    'C002': "CARDIAC1234",
+    'C003': "BINCRACKER",
+    'C004': "INDEXRANKING",
+    'C005': "HTMLENTITIES",
+    'C006': "PARIS",                # You have to upload curresponding Morse code to public/static/challenges/morse.wav
+    'C007': "BUFFERZONE",
+    'C008': "ARENACRACKER",
+    'C009': "AGENTMODIFIER",
+    'C010': "SESSIONEXPERT",
+}
+
+
+```
