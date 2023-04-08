@@ -13,7 +13,7 @@ from utils.validators import match_email_regex
 class Challenge(TemplateView):
     template_name = 'dashboard/C008/index.html'
     extra_context = {
-        'challenge_title': "Login Or Bypass!!",
+        'challenge_title': "A fantesy Lock!",
         'FLAG': settings.ARENA_FLAGS['C008'],
     }
 
@@ -21,7 +21,7 @@ class Challenge(TemplateView):
 class PathFinder(TemplateView):
     template_name = 'dashboard/C008/autoindex.html'
     extra_context = {
-        'challenge_title': "Login Or Bypass!!",
+        'challenge_title': "A fantesy Lock!",
         'FLAG': settings.ARENA_FLAGS['C008'],
     }
 
@@ -29,7 +29,7 @@ class PathFinder(TemplateView):
 class Recovery(TemplateView):
     template_name = 'dashboard/C008/recovery.html'
     extra_context = {
-        'challenge_title': "Login Or Bypass!!",
+        'challenge_title': "A fantesy Lock!",
         'FLAG': settings.ARENA_FLAGS['C008'],
     }
 
@@ -41,7 +41,15 @@ class Recovery(TemplateView):
 class PathException(TemplateView):
     template_name = 'dashboard/C008/autoindex-empty.html'
     extra_context = {
-        'challenge_title': "Login Or Bypass!!",
+        'challenge_title': "A fantesy Lock!",
+        'FLAG': settings.ARENA_FLAGS['C008'],
+    }
+
+
+class Path404(TemplateView):
+    template_name = 'dashboard/C008/404.html'
+    extra_context = {
+        'challenge_title': "A fantesy Lock!",
         'FLAG': settings.ARENA_FLAGS['C008'],
     }
 
