@@ -170,7 +170,7 @@ That's it! Your Django application should now be up and running on your producti
 Please note that this environment has not been tested. I Would like to bring up your Pull requests against documentations and issues. 
 for now to setup the project in docker. User the command 
 
-> docker-compose up --build
+> sudo docker-compose up --build
 
 This will build the Docker image and start the container. The application should now be accessible at http://localhost:8000.
 
