@@ -54,11 +54,12 @@ python manage.py migrate
 ```
 6. Collect static files:
  ```commandline
-python manage.py collectstatic --no-inpyt
+python manage.py collectstatic --noinput
+
 ```
 7. Test the application by running the development server:
  ```commandline
- python manage.py runserver 0.0.0.0:8000`
+ python manage.py runserver 0.0.0.0:8000
  ```
    If everything is working fine, proceed with the deployment on nginx using gunicorn and systemd.  
 
