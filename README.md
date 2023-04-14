@@ -173,6 +173,8 @@ for now to setup the project in docker. User the command
 
 > docker-compose up --build
 
+You may need to run command with "sudo" if you are using a linux machine with docker installed with root privileges.
+
 This will build the Docker image and start the container. The application should now be accessible at http://localhost:8000.
 
 to change the port number, change the "0.0.0.0:8000" to your wish  ip:port in the last line of `Dockerfile`
